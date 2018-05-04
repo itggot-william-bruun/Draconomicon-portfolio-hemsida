@@ -1,0 +1,242 @@
+
+#wrapper {
+    display: grid;
+    height: 200%;
+    width: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    /*grid-template-rows: ;
+    grid-gap: ;
+    grid-template-areas: ;*/
+
+}
+
+
+
+@media only screen and (max-width: 786px){
+
+    body {
+
+    }
+    #wrapper {
+        display: grid;
+        height: 200vh;
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 50px;
+        grid-template-areas: 
+        "h h h h"
+        "cont cont cont cont"
+        "cont cont cont cont"
+        "cont cont cont cont"
+        "cont cont cont cont"
+        "wa wa wa wa"
+        "wa wa wa wa"
+        "wa wa wa wa"
+        "foot foot foot foot";
+    }
+
+    #header {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        background-color: #8282db;
+        justify-content: space-between;
+    }
+
+    .h {
+        grid-area: h; 
+    }
+
+    .foot{
+        grid-area:foot;
+        background-color: #8282db;
+    }
+
+    .cont {
+        grid-area: cont;
+        display: flex;
+        flex-flow: column;
+        align-items: center; 
+    }
+
+    .wa {
+        grid-area: wa;
+        display: flex;
+    }
+
+    .icon {
+        flex-grow: 0.20;
+        padding-top: 5px;
+        padding-left: 5px;
+        height: 30px;
+        width: 50px; 
+    }
+
+    .name {
+        flex-grow: 2;
+    }
+
+    h1.name {
+        font-family: 'Cinzel', serif;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .sebutt{
+        height: 30px;
+        width: 70px;
+        margin-top: 10px;
+        float: right;
+    }
+
+    /*button*/
+    form.search {
+        padding-top: 10px;
+        flex-grow: 0.0001;
+    }
+
+    form.search button {
+        float: right;
+        width: 21%;
+        padding: 5px;
+        background: #2196F3;
+        color: white;
+        font-size: 12px;
+        border: 1px solid grey;
+        border-left: none;
+        cursor: pointer;
+    }
+
+    form.search input[type=text] {
+        float: right;
+        padding: 5px;
+        font-size: 12px;
+        border: 1px solid grey;
+        width: 50%;
+        background: #f1f1f1;
+    }
+
+    form.example button:hover {
+        background: #0b7dda;
+    }
+
+    form.search::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    /* Inspect image*/
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 11;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.9)
+    }
+    
+    .modal-content{
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+    
+    .modal-content, #caption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+    
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #image {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    /*Decorations*/
+    .none { 
+        text-decoration: none;
+        list-style: none;
+    }
+
+    .center-element {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    /*Animations*/
+    
+    section {
+        background: #eee;
+        padding: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      .module {
+        width: 40%;
+        min-height: 200px;
+        background: white;
+        padding: 20px;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-bottom: 4%;
+        &:nth-child(even) {
+          margin-right: 0;
+        }
+        box-shadow: 0 1px 3px rgba(black, 0.2);
+      }
+       
+      .come-in {
+        transform: translateY(150px);
+        animation: come-in 0.8s ease forwards;
+      }
+      .come-in:nth-child(odd) {
+        animation-duration: 0.6s;
+      }
+      .already-visible {
+        transform: translateY(0);
+        animation: none;
+      }
+      
+      @keyframes come-in {
+        to { transform: translateY(0); }
+      }
+
+}
